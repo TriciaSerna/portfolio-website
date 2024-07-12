@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <style>
+        body {
+            background-image: url('bg.png');
+            background-size:contain;
+            background-repeat: repeat-y;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inika';
+            scroll-behavior: smooth;
+        }  
+    
+        .navbar {
+            background: white;
+            height: 70px;
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            position: sticky;
+            z-index: 999;
+            border-bottom: 1px solid black;
+            
+        }
+    
+        #logo_img {
+            width: 40px;
+            height: 40px;
+            position: absolute; left: 25px; top: 15px;
+        }
+        .navbar_container {
+            display: flex;
+            justify-content: space-between;
+            height: 80px;
+            z-index: 1;
+            width: 100%;
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 50px;
+            position: absolute; left: 20px;
+        }
+        #logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+            background-color: rgb(6, 6, 6);
+            background-size: 100%;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            font-size: 1.5rem;
+        }
+        .menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        .item {
+            height: 80px;
+    
+        }
+        .link {
+            color: rgb(0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 125px;
+            text-decoration: none;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+        .item_btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1rem;
+            width: 100%;
+            text-align: center;
+        }
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            padding: 10px 20px;
+            width: 100%;
+            outline: none;
+            border-radius: none;
+            background: black;
+            -webkit-text-fill-color: white;
+            -moz-text-fill-color: white;
+            border-radius: 5px;
+            height: 40px;
+            width: 90%;
+        }
+        .link:hover {
+            color: rgb(143, 122, 193);
+            transition: all 0.3s ease;
+        }
+        .hero {
+            font-size: large;
+            display: flex;
+            text-align: justify;
+            line-height: 1.6;
+            font-style: oblique;
+            align-items: center;
+            align-content: center;
+        }
+
+        #me_img {
+            height: auto;
+            width: 25%;
+            position: absolute; 
+            right: 120px; 
+            top: 50px;
+        }
+        .hero_container{
+            width: 100%;
+            height: auto;
+            position: absolute; 
+            left: 50px; 
+            bottom: 10px;
+        }
+        .main              {
+            margin: 20px;
+            position: sticky;
+            font-size: 100%;
+            display: flex;
+            text-align: justify;
+            line-height: 1.6;
+            font-style: oblique;
+            align-items: center;
+            align-content: center;
+        }
+        
+        .main_content {
+            margin-left: 15px;
+            margin-top:100px;     
+           
+        }
+        .my_img {
+            height: auto;
+            width: 30%;
+            position: absolute; 
+            right: 70px; 
+            top: 70px;
+        }
+        .dcv {
+            width:10%;
+            height: 50px;
+            position: absolute;
+            left:68%;
+            top: 90%;
+            font-style: oblique;
+            background: black;
+            -webkit-text-fill-color: white;
+            -moz-text-fill-color: white;
+            border-radius: 5px;
+
+        }
+        .contact {
+            width:10%;
+            height: 50px;
+            position: absolute;
+            left: 82%;
+            top: 90%;
+            font-style: oblique;
+            background: black;
+            -webkit-text-fill-color: white;
+            -moz-text-fill-color: white;
+            border-radius: 5px;
+       }
+       .label_about {
+                text-decoration-line: underline;
+            }
+        h4 {
+            text-decoration: underline;
+        }
+        #portfolio {
+        margin: 80px;
+        width: 90%;
+        height: auto;
+        border: 3px solid rgb(249, 249, 249);
+        padding: 50px;
+        align-items: center;
+        text-align: center;
+        align-content: center;
+        }
+
+        .work_list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 40px;
+        margin-top: 50px;
+        }
+
+        .work {
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+        width: 100%;
+        }
+
+        .work img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        display: block;
+        }
+       .contact_left{
+        flex-basis: 35%;
+       }
+       .contact_right{
+        flex-basis: 60%;
+       }
+       .contact_left p{
+        margin-top: 30px;
+        
+       }
+       .contact_left p i{
+        color: black;
+        margin-right: 15px;
+        font-size: 25px;
+       }
+       .btn.btn2{
+        display: inline-block;
+        background: black;
+       }
+       #contact {
+        padding: 40px 0;
+        }
+
+        .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 5px;
+        }
+
+        .logo {
+        text-align: center;
+        margin-bottom: 20px;
+        }
+
+        .logo img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        }
+
+        .logo h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        }
+
+        h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        }
+
+        form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+        input, textarea {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        }
+
+        button[type="submit"] {
+        background-color: #337ab7;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+        background-color: #23527c;
+        }
+        p {
+        font-size: 14px;
+        color: #666;
+        text-align: center;
+        margin-top: 20px;
+        }
+        .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        }
+
+        .sticky + .content {
+        padding-top: 60px;
+        }
+
+
+
+
+        @media only screen 
+        and (max-width: 960px) {
+
+            
+            .navbar_container {
+                display: flex;       
+                justify-content: space-between;
+                height: 80px;
+                z-index:1;
+                width: 100%;
+                max-width: 1300px;
+                padding: 0;
+            }
+
+            .menu {
+                display: grid;
+                margin: 0;
+                width: 90%;
+                position: absolute;
+                top: -1000px;
+                opacity: 1;
+                transition: all 0.5s ease;
+                z-index: -1;
+                background: whitesmoke;
+        
+            }
+            .menu.active {
+                
+                top: 100%;
+                opacity: 1;
+                transition: all 0.5s ease;
+                z-index: 99;
+                height: 60vh;
+                font-size: 1.6rem;
+            }
+            #logo {
+                padding-left: 25px;
+            }
+             #logo_img {
+                position: absolute; left: 3px;
+             }
+            .navbar_toggle .bar{
+                width: 25px;
+                height: 3px;
+                margin: 5px auto;
+                transition: all 0.3s ease-in-out;
+                background: black;
+            }
+            .item {
+                width: 100%;
+            }
+
+            .link {
+                text-align: center;
+                padding: 2rem;
+                width: 100%;
+                display: table;
+            }
+            .item_btn {
+                padding-bottom: 2rem;
+            }
+            .button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 80%;
+                height: 80px;
+                margin: 0;
+            }
+            #mobile_menu {
+                position: absolute;
+                top: 20%;
+                right: 5%;
+                transform:  translate(5%, 20%);
+            }
+            .navbar_toggle .bar{
+                cursor: pointer;
+                display: block;
+            }
+
+            #mobile_menu.is-active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            #mobile_menu.is-active .bar:nth-child(1) {
+                transform: translateY( 8px) rotate(45deg);
+            }
+            #mobile_menu.is-active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+
+        .hero {
+            background-image: url(bg.png);
+            padding: 200px 0;
+        }
+
+        .my_img {
+            margin-left: 50%;
+        }
+            @media screen and (max-width:768px) {
+            
+                .hero_heading {
+                    font-size: 30px;
+                }
+                .hero_description {
+                    font-size: 14px;
+                    position: relative;
+                }
+                #me_img {
+                    position: absolute;
+                    left:60% ;
+                    top: 5%;
+                    width: 30%;
+                }
+                .my_img {
+                    position: static;
+            
+                    
+                }
+                .main {
+                    font-size: 70%;
+                }
+                #dcv {
+                    width: 20%;
+                    height: 10%;
+                    position: absolute;
+                    left: 50%;
+                }
+                #contact {
+                    width: 20%;
+                    height: 10%;
+                    position: absolute;
+                    left: 80%;
+                }
+                .contact-form {
+                    width: 50%;
+                }
+            }
+            
+        
+    
+
+    </style>
+</head>
+
+<body>
+    <!--navbar-->
+    <nav class="navbar">
+        <a><img href='#' id='logo_img' src="logo.png" alt="Home"></a>
+        <div class="navbar_container">
+            <a href="#home" id="logo">TRICIA</a>
+            <div class="navbar_toggle" id="mobile_menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="menu">
+            <li class="item">
+                <a href="#home" class="link" id="home_page">HOME</a>
+            </li>
+            <li class="item">
+                <a href="#about" class="link" id="about_page">ABOUT ME</a>
+            </li>
+            <li class="item">
+                <a href="#portfolio" class="link" id="port_page">PORTFOLIO</a>
+            </li>
+            <li class="item_btn">
+                <a href="#contact" class="button" id="cont_page">CONTACT ME</a>
+            </li>
+        </ul>
+        </div>
+    </nav>
+    <!--Home-->
+    <div class="hero" id="home">
+        <div class="hero_container">
+            <a><img href="#me_pic" id='me_img' src="me.png" alt="Tricia Serna"></a>
+            <h3 id="hi">Hi I'm..</h3>
+            <h1 class="hero_heading"> Tricia Cinco Serna</h1>
+            <div class="pro" id="profei">
+            <ul >
+                <li>Graphic Designer</li>
+                <li>Web Developer</li>
+                <li>Online Teacher</li>
+            </ul>
+            </div>
+            <pre class="hero_description">
+
+I'm currently a online teacher who's willing to be part of my students 
+growth graphic designer with a passion for crafting visually stunning 
+experiences,and a future web developer with a knack for building user
+-friendly and engaging websites.
+
+I'm eager to learn more about your needs and see how my skills can 
+contribute to your success.
+            </pre>
+        </div>
+        
+    </div>
+
+
+  <!-- About -->
+<div class="main" id="about">
+    <div class="main_content">
+      <img src="me2.jpg" alt="Tricia Serna" class="my_img">
+      <h1 class="label_about">About Me</h1>
+      <div class="details" id="abouts">
+        <pre>
+
+
+          Hello, I'm <b>Tricia C. Serna</b> a college student taking <b>Bachelor of Science in Information
+          Technology</b> and currently working as a <b>online teacher and a private facebook ads manager 
+          of an HR client</b>. I'm future graphic designer and web developer whose passionate about creating user-
+          centered experiences that are both aesthetically pleasing and achieve clear goals
+        </pre>
+        <pre>
+          I'm always excited to learn new things and collaborate with creative minds to bring 
+          innovative projects to life. Let's chat and see how I can help turn your vision into 
+          a reality!
+  
+  
+  
+        </pre>
+        <button class="dcv">Download CV</button>
+        <button id="contact-btn" class="contact" onclick="myFunction()">Contact Me</button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="portfolio">
+    <div class="port_container">
+      <h1 class="sub_title">MY PORTFOLIO</h1>
+      <h4>See My Projects</h4>
+      <div class="work_list">
+        <div class="work">
+            <a href="https://triciaserna.github.io/online_resume/"> <img src="resume.jpg" alt="Resume Project">
+            <div class="layer">
+                <h3>RESUME</h3>
+            </a>
+          </div>
+        </div>
+        <div class="work">
+            <a href="https://triciaserna.github.io/ipt101-calculator-app/"><img src="calcu.jpg" alt="Calculator Project">
+            <div class="layer">
+                <h3>CALCULATOR</h3>
+            </div>
+          </a>
+        </div>
+        <div class="work">
+          <a href="https://triciaserna.github.io/rock-paper-scissor-/"><img src="game.jpg" alt="Game Project">
+            <div class="layer">
+                <h3>ROCK PAPER SCISSOR</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact">
+    <div class="container">
+        <div class="logo">
+            <img src="logo.png" alt="Tricia's Logo">
+            <h2>Tricia</h2>
+        </div>
+        <h1>Contact Me</h1>
+        <form id="contact-form">
+            <input type="email" name="email" id="email" placeholder="Email">
+            <textarea name="message" id="message" placeholder="Message"></textarea>
+            <button type="submit" id="submit-btn">Submit</button>
+        </form>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/tricia.serna2902"><i><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z" clip-rule="evenodd"/>
+              </svg>
+               </i></a>
+            <a href="https://www.linkedin.com/in/tricia-serna/"><i><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z" clip-rule="evenodd"/>
+                <path d="M7.2 8.809H4V19.5h3.2V8.809Z"/>
+              </svg>
+              </i></a>
+            <a href="https://www.instagram.com/tori_shiaa/?hl=en"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
+              </svg>
+              </a>
+        </div>
+        <p>&copy; 2024 Tricia Cinco Serna. All Rights Reserved.</p>
+
+    </div>
+</div>
+</body>
+<script>
+
+    window.onscroll = function() {navFunction()};
+
+    var navbar = document.getElementsByClassName("navbar");
+    var sticky = navbar.offsetTop;
+
+    function navFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }
+
+const menu = document.querySelector('#mobile-menu');
+const menuLinks = document.querySelector('.menu');
+const navLogo = document.querySelector('#logo');
+
+const mobileMenu = () => {
+  menu.classList.toggle('is-active');
+  menuLinks.classList.toggle('active');
+};
+
+function myFunction() {
+  const element = document.getElementById("contact");
+  element.scrollIntoView();
+}
+
+menu.addEventListener('click', mobileMenu);
+
+
+const hideMobileMenu = () => {
+  const menuBars = document.querySelector('.is-active');
+  if (window.innerWidth <= 768 && menuBars) {
+    menu.classList.toggle('is-active');
+    menuLinks.classList.remove('active');
+  }
+};
+
+menuLinks.addEventListener('click', hideMobileMenu);
+navLogo.addEventListener('click', hideMobileMenu);
+
+
+const highlightMenu = () => {
+  const elem = document.querySelector('.highlight');
+  const homeMenu = document.querySelector('#home_page');
+  const aboutMenu = document.querySelector('#about_page');
+  const portMenu = document.querySelector('#port_page');
+  const contMenu = document.querySelector('#cont_page');
+  let scrollPos = window.scrollY;
+
+  if (window.innerWidth > 960 && scrollPos < 600) {
+    homeMenu.classList.add('highlight');
+    aboutMenu.classList.remove('highlight');
+    portMenu.classList.remove('highlight');
+    contMenu.classList.remove('highlight');
+    return;
+  } else if (window.innerWidth > 960 && scrollPos < 1400) {
+    aboutMenu.classList.add('highlight');
+    homeMenu.classList.remove('highlight');
+    portMenu.classList.remove('highlight');
+    contMenu.classList.remove('highlight');
+    return;
+  } else if (window.innerWidth > 960 && scrollPos < 2345) {
+    portMenu.classList.add('highlight');
+    aboutMenu.classList.remove('highlight');
+    homeMenu.classList.remove('highlight');
+    contMenu.classList.remove('highlight');
+    return;
+  } else if (window.innerWidth > 960 && scrollPos >= 2345) {
+    contMenu.classList.add('highlight');
+    aboutMenu.classList.remove('highlight');
+    homeMenu.classList.remove('highlight');
+    portMenu.classList.remove('highlight');
+    return;
+  }
+
+  if ((elem && window.innerWidth < 960 && scrollPos < 600) || elem) {
+    elem.classList.remove('highlight');
+  }
+};
+    function contact(){
+        if (window.innerWidth > 960 && scrollPos >= 2345) {
+        contMenu.classList.add('highlight');
+        aboutMenu.classList.remove('highlight');
+        homeMenu.classList.remove('highlight');
+        portMenu.classList.remove('highlight');
+        return;
+        }
+
+        if ((elem && window.innerWidth < 960 && scrollPos < 600) || elem) {
+        elem.classList.remove('highlight');
+        }
+    }
+
+
+window.addEventListener('scroll', highlightMenu);
+window.addEventListener('click', highlightMenu);
+
+</script>
+</html>
